@@ -1,5 +1,6 @@
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 
 public class ByteArrayInputOutputExample {
     public static void main(String[] args) {
@@ -36,8 +37,8 @@ public class ByteArrayInputOutputExample {
         for (int x : a){
             System.out.print((char) x+",");
         }
-
-
+//for writing inside a file
+            baos.writeTo(new FileOutputStream("D:/Java/Java Language/java/Practice work/InterfacePractice/Test.txt"));
 
         }catch(Exception e) {
             System.out.println(e);
