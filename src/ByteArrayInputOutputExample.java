@@ -19,8 +19,9 @@ public class ByteArrayInputOutputExample {
 //        String str = new String(bais.readAllBytes());
 //        System.out.println(str);
         //how to make a ByteArrayOutputStream
-//       for this we did not pass any think in constructor we only pass size which we want to pass in byte array
         ByteArrayOutputStream baos = new ByteArrayOutputStream(9);
+        //for this we did not pass any think in constructor we only pass size which we want to pass in byte array
+        //for write byte by byte value we can use .write()
         baos.write('a');
         baos.write('b');
         baos.write('c');
@@ -30,7 +31,7 @@ public class ByteArrayInputOutputExample {
         baos.write('g');
         baos.write('j');
         baos.write('k');
-
+//for printing all the characters
         byte[] a= baos.toByteArray();
         for (int x : a){
             System.out.print((char) x+",");
