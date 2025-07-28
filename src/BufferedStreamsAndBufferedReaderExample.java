@@ -42,6 +42,7 @@ public class BufferedStreamsAndBufferedReaderExample {
             bis.reset();
             System.out.print((char)bis.read());
             // new method .readLine()
+            //this is use for read all the lines in the stream
             System.out.println(bis.readLine());
 //*-------------------------------------------------Buffered Reader Stream---------------------------------------------------------------------------------*
             FileOutputStream fos = new FileOutputStream("D:/Java/Java Language/java/Practice work/InterfacePractice/Test.txt");
