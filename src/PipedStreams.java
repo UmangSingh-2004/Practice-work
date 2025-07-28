@@ -6,12 +6,12 @@ import java.io.PipedOutputStream;
 class Buyer extends Thread {
     PipedInputStream buyer;
 
-    // ❌ Fix: Correct assignment. It was previously: n = buyer;
+    // Fix: Correct assignment. It was previously: n = buyer;
     Buyer(PipedInputStream n) {
         this.buyer = n;
     }
 
-    // ❌ Fix: Method name changed from 'Run()' to 'run()'
+    //  Fix: Method name changed from 'Run()' to 'run()'
     // Thread's start() method internally calls run(), so correct naming is essential
     public void run() {
         try {
@@ -22,7 +22,7 @@ class Buyer extends Thread {
                 Thread.sleep(10);  // Simulate delay
             }
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();  // ❌ Fix: Exception should be handled here instead of 'throws'
+            e.printStackTrace();  //  Fix: Exception should be handled here instead of 'throws'
         }
     }
 }
@@ -31,7 +31,7 @@ class Buyer extends Thread {
 class Seller extends Thread {
     PipedOutputStream seller;
 
-    // ❌ Fix: Correct assignment. It was previously: n = seller;
+    //  Fix: Correct assignment. It was previously: n = seller;
     Seller(PipedOutputStream n) {
         this.seller = n;
     }
@@ -63,7 +63,7 @@ public class PipedStreams {
         Buyer b = new Buyer(pi);
         Seller s = new Seller(po);
 
-        b.start();  // ❗ Triggers the run() method inside Buyer
-        s.start();  // ❗ Triggers the run() method inside Seller
+        b.start();  //  Triggers the run() method inside Buyer
+        s.start();  //  Triggers the run() method inside Seller
     }
 }
