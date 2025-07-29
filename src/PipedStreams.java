@@ -61,3 +61,37 @@ public class PipedStreams {
         s.start();
     }
 }
+/*
+====================================================
+        📌 PIPED STREAMS — EXPLANATION
+====================================================
+
+        👉 What Piped Streams Do:
+        - `PipedInputStream` and `PipedOutputStream` (or Reader/Writer equivalents)
+        allow **two threads** to communicate directly.
+        - Data written to the PipedOutputStream is immediately available
+        for reading from the connected PipedInputStream.
+
+        👉 Where We Use Piped Streams:
+        - **Producer-Consumer pattern** (one thread produces data, another consumes it).
+        - **Inter-thread communication** without using files or sockets.
+        - Useful for **real-time streaming of data** between threads.
+
+        👉 Advantages:
+        1. **Thread-to-thread communication without intermediate storage** (no file needed).
+        2. **Fast** because it’s all in memory.
+        3. Avoids manual synchronization of data queues in basic scenarios.
+
+        👉 Key Points:
+        - You must connect `PipedOutputStream` to `PipedInputStream` using `connect()` or constructor.
+        - Data moves **one-way**: Output → Input.
+        -  Typically used between **exactly two threads**.
+        - Not suitable for large buffering; intended for streaming small chunks.
+        - If both streams are used in the same thread, it can cause a **deadlock**.
+
+        Example Concept:
+        [Thread 1: Seller] ---> writes data ---> [PipedOutputStream]
+        connected to
+        [Thread 2: Buyer ] <--- reads data  <--- [PipedInputStream]
+========================================================================================================
+*/
