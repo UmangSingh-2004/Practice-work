@@ -1,12 +1,5 @@
 import java.io.*;  // Importing I/O classes for file and data streams
 
-// Student class with 3 fields
-class Student {
-    int rollNo;
-    String name;
-    String subject;
-}
-
 public class DataStramExample {
     public static void main(String[] args) {
         try {
